@@ -1,0 +1,55 @@
+$framework-prefix: 'pb' !default;
+$input-disabled-background-color: #f1f1f1 !default;
+$input-border-focus-color: #75af26 !default;
+$input-border-hover-color: #a0a0a0 !default;
+$input-border-color: #cbcbcb !default;
+$input-label-color: #a0a0a0 !default;
+$input-border-width: 1px !default;
+$input-indent: 1.5rem !default;
+$input-height: 56px !default;
+$btn-bg-disabled-color: #dfdfdf !default;
+$btn-bg-color:  #75af26 !default;
+$btn-rounded-bg-color: #fff !default;
+$btn-rounded-bg-h-color: #75af26 !default;
+$btn-rounded-font-h-color: #fff !default;
+$btn-rounded-height: 26px !default;
+$btn-height: 56px !default;
+$tb-description-bg-color: #f0f0f0 !default;
+$tb-border-color: #d8d8d8 !default;
+$tb-shown-rows: 5;
+$radio-border-h-color: #a0a0a0 !default;
+$radio-border-color: #d7d7d7 !default;
+$radio-container-size: 24px;
+$radio-circle-size: 10px;
+$checkbox-border-h-color: #a0a0a0 !default;
+$checkbox-border-color: #d7d7d7 !default;
+$checkbox-size: 26px;
+
+$business-secondary-color: #089cb6 !default;
+$slider-btn-normal-color: #979797 !default;
+
+$business-primary-color: #15b6d2 !default;
+$gray-universal-color: #a0a0a0 !default;
+$border-default-color: #d7d7d7 !default;
+$input-border-color: #cbcbcb !default;
+$main-danger-color: #ff4c4c !default;
+$main-black-color: #424242 !default;
+$secondary-color: #5e980f !default;
+$disabled-color: #dfdfdf !default;
+$primary-color: #75af26 !default;
+$grey-bg-color: #f4f4f4 !default;
+$main-grey-color: #888 !default;
+$main-bg-color: #fff !default;
+$transition-time: .3s !default;
+$grid-gutter-width-base: 12px !default;
+$area-control-height: 112px !default;
+$form-control-height: 56px !default;
+$min-column-width: 320px !default;
+$max-column-width: 400px !default;
+$grid-breakpoints: (
+        xs: 0,
+        sm: 560px,
+        md: 667px,
+        lg: 960px,
+        xl: 1500px
+) !default;

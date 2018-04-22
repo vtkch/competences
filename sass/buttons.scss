@@ -1,0 +1,59 @@
+@import 'variables';
+@import './mixins';
+
+/// @group mixins
+/// @name btn-placeholder
+@mixin btn-placeholder {
+  @include text-overflow;
+  @include btn-by-default;
+  text-transform: uppercase;
+  height: var(--btn-height);
+  text-align: center;
+  font: 22px bold;
+}
+
+.#{$framework-prefix}-button {
+  background-color: var(--btn-bg-color);
+  color: var(--btn-rounded-bg-color);
+  text-transform: uppercase;
+  height: var(--btn-height);
+  @include text-overflow;
+  @include btn-by-default;
+  text-align: center;
+  font: 22px bold;
+  border: none;
+  &:hover {
+    background-color: var(--secondary-color);
+  }
+  &-secondary {
+    background-color: var(--main-bg-color);
+    border: 1px solid currentColor;
+    color: var(--primary-color);
+    @include btn-placeholder;
+    @include btn-by-default;
+    &:not(:disabled):hover {
+      background-color: var(--btn-rounded-bg-h-color);
+      color: var(--btn-rounded-font-h-color);
+    }
+  }
+  &-rounded {
+    background-color: var(--btn-rounded-bg-color);
+    height: var(--btn-rounded-height);
+    border: 1px solid currentColor;
+    color: var(--main-black-color);
+    @include btn-by-default;
+    @include text-overflow;
+    border-radius: 27px;
+    text-align: center;
+    font: 13px normal;
+
+    &:not(:disabled):hover {
+      background-color: var(--btn-rounded-bg-h-color);
+      color: var(--btn-rounded-font-h-color);
+    }
+    &:disabled {
+      color: var(--btn-rounded-bg-dis-color);
+      border-color: currentColor;
+    }
+  }
+}

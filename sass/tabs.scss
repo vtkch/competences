@@ -1,0 +1,47 @@
+@import './reset';
+@import 'variables';
+
+.#{$framework-prefix}-tab {
+  --tab-font-size: 24px;
+  --tab-margin: 24px;
+  --gap: 42px;
+  $this: &;
+  grid-template-areas: "header header header header" "label label label label" "content content content content";
+  grid-auto-columns: min-content;
+  grid-gap: var(--gap);
+  display: grid;
+  &-inverted {
+    grid-template-areas: "label label label label" "header header header header" "content content content content";
+  }
+  &-header {
+    color: var(--main-black-color);
+    grid-area: header;
+    grid-column: span 10;
+    font-size: 34px;
+  }
+  input[type="radio"],
+  &-content {
+    display: none;
+  }
+  input[type="radio"]:checked {
+    & + label + #{$this}-content {
+      grid-area: content;
+      grid-column: span 10;
+      display: block;
+    }
+    & + label {
+      color: var(--primary-color);
+    }
+  }
+
+  label {
+    transition: color var(--transition-time);
+    font-size: var(--tab-font-size);
+    color: var(--tab-label-color);
+    white-space: nowrap;
+    cursor: pointer;
+    &:hover {
+      color: var(--primary-color);
+    }
+  }
+}

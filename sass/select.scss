@@ -1,0 +1,101 @@
+@import 'variables';
+
+.#{$framework-prefix}-select {
+  min-height: var(--inp-height);
+  --icon-size: 24px;
+  &-container {
+    /*box-shadow: 0 0 10px 0 rgba(0, 0, 0, .23);*/
+    min-width: $min-column-width;
+    width: $max-column-width;
+    flex-direction: column;
+    position: absolute;
+    cursor: pointer;
+    max-width: 100%;
+    display: flex;
+    &:active,
+    &:focus {
+      outline: none;
+      border: none;
+      padding: 0;
+    }
+    & input[type="radio"] {
+      position: absolute;
+      z-index: -1;
+      opacity: 0;
+    }
+    &:not(:focus) > input[type="radio"] {
+      &:not(:checked) + label {
+        display: none;
+      }
+      &:checked + label {
+        pointer-events: none;
+        &:before {
+          transform: rotateX(0);
+        }
+      }
+    }
+    & label {
+      border-right: 1px solid var(--inp-border-color);
+      border-left: 1px solid var(--inp-border-color);
+      min-height: var(--inp-height);
+      flex-direction: column;
+      text-indent: 1.5rem;
+      user-select: none;
+      display: flex;
+      &:before {
+        transition: transform var(--transition-time);
+      }
+      &:focus {
+        outline: none;
+      }
+      & > .title {
+        font-size: 13px;
+        margin-top: 8px;
+        color: #a0a0a0;
+      }
+      & > .desc {
+        color: $main-black-color;
+        font-size: 17px;
+      }
+      &:last-of-type {
+        border: 1px solid var(--inp-border-color);
+        border-top: none;
+      }
+    }
+    & > input[type="radio"] {
+      &:checked + label {
+        border: 1px solid var(--inp-border-color);
+        order: 1;
+        &:before {
+          top: calc(calc(var(--inp-height) - var(--icon-size)) / 2);
+          background-image: url(../assets/spriteinput.svg);
+          background-position: -13px 287px;
+          transform: rotateX(-180deg);
+          height: var(--icon-size);
+          width: var(--icon-size);
+          position: absolute;
+          right: 24px;
+          content: '';
+        }
+      }
+      &:checked + label:hover {
+        border-color: var(--primary-color);
+        cursor: pointer;
+      }
+      &:not(:checked) + label {
+        /*box-shadow: 0 0 10px 0 rgba(0, 0, 0, .23);*/
+        background-color: var(--main-bg-color);
+        justify-content: center;
+        z-index: 10;
+        order: 2;
+        &:hover > .desc {
+          color: var(--secondary-color);
+          cursor: pointer;
+        }
+      }
+      &:not(:checked) + label > .title {
+        display: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,6 @@
+@import 'variables';
+@import './mixins';
+
+.#{$framework-prefix}-grid {
+  @include grid;
+}

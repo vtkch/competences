@@ -1,0 +1,47 @@
+@import 'variables';
+@import './mixins';
+
+
+@mixin corner {
+  color: var(--slider-btn-normal-color);
+  position: absolute;
+  display: block;
+  content: '∟';
+  top: 5px;
+}
+
+.#{$framework-prefix}-slider-button {
+  border: 1px solid var(--slider-btn-normal-color);
+  background-color: var(--main-bg-color);
+  transition: var(--transition-time);
+  @include btn-by-default;
+  position: relative;
+  border-radius: 50%;
+  $size: 27px;
+  height: $size;
+  width: $size;
+  &.#{$framework-prefix}-slider-left {
+    margin-right: 32px;
+    &:before {
+      transform: rotate(45deg) translate(1px, -1px);
+      @include corner;
+    }
+  }
+
+  &.#{$framework-prefix}-slider-right:before {
+    transform: rotate(-135deg) translate(1px, -1px);
+    @include corner;
+  }
+  &:hover {
+    color: var(--primary-color);
+    border-color: currentColor;
+  }
+  &:active {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    color: var(--main-bg-color);
+    &:before {
+      color: var(--main-bg-color);
+    }
+  }
+}

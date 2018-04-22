@@ -1,0 +1,29 @@
+@import 'variables';
+
+
+@mixin main-bg-color {
+  transition: box-shadow var(--transition-time);
+  background-color: var(--main-bg-color);
+  &:hover {
+    box-shadow: 25px 25px 35px 0 rgba(0, 0, 0, 0.1);
+  }
+}
+
+.#{$framework-prefix}-shadow-menu-item {
+  @include main-bg-color;
+  box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.02),
+  0 4px 4px 0 rgba(0, 0, 0, 0.02),
+  0 8px 8px 0 rgba(0, 0, 0, 0.02),
+  0 16px 16px 0 rgba(0, 0, 0, 0.02),
+  0 32px 32px 0 rgba(0, 0, 0, 0.02),
+  0 64px 64px 0 rgba(0, 0, 0, 0.02);
+}
+
+.#{$framework-prefix}-shadow-widget {
+  box-shadow: 0 15px 15px 0 rgba(0, 0, 0, 0.05);
+  @include main-bg-color;
+}
+
+.#{$framework-prefix}-shadow-thumb {
+  box-shadow: 0 12px 10px 0 rgba(0, 0, 0, 0.15);
+}

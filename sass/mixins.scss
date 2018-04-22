@@ -1,0 +1,46 @@
+@import 'variables';
+
+/// @group mixins
+/// @name text-overflow
+@mixin text-overflow {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+/// @group mixins
+/// @name caret
+/// @param {Length} $caret-size [6px] caret size
+/// @content some content
+@mixin caret ($caret-size: 6px){
+  border: $caret-size solid transparent;
+  border-top: $caret-size solid var(--main-black-color);
+  height: 0;
+  width: 0;
+  @content;
+}
+/// @group mixins
+/// @name btn-by-default
+@mixin btn-by-default {
+  user-select: none;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+/// @group mixins
+/// @name grid
+@mixin grid {
+  grid-template-columns: repeat(auto-fill, minmax($min-column-width, $max-column-width));
+  grid-gap: $grid-gutter-width-base;
+  display: grid;
+}
+
+/// @group mixins
+/// @name size
+/// @param {Length} $width - Element's width
+/// @param {Length} $height [$width] - Element's height
+/// @output `width` and `height`
+@mixin size ($width, $height: $width) {
+  height: $height;
+  width: $width;
+}

@@ -1,0 +1,83 @@
+@import 'variables';
+@import './mixins';
+
+.#{$framework-prefix}-checkbox {
+  --transition-time: .2s;
+  $this: &;
+  &-group {
+    grid-template-rows: repeat(auto-fill, minmax(var(--checkbox-container-height), 1fr));
+    @include grid;
+  }
+  &-container {
+    min-height: var(--checkbox-container-height);
+    transition: var(--transition-time);
+    position: relative;
+    & > [type="checkbox"] {
+      display: none;
+    }
+    &:hover > #{$this}-label:before {
+      border-color: var(--inp-border-h-color);
+    }
+   /* &:before {
+      transform-origin: calc(var(--checkbox-size) / 2 - 1px) calc(var(--checkbox-size) / 2 - 1px);
+      transition: var(--transition-time);
+      height: var(--checkbox-size);
+      width: var(--checkbox-size);
+      border-radius: 50%;
+      position: absolute;
+      display: block;
+      content: '';
+    }*/
+
+    // TODO should change it to animation with backwards animation fill mode
+   /* &:active:before {
+      background: var(--primary-color);
+      transform: scale(2);
+      opacity: .7;
+    }*/
+  }
+
+  &-label {
+    align-items: center;
+    line-height: 1.5rem;
+    position: relative;
+    user-select: none;
+    cursor: pointer;
+    display: flex;
+    &:before {
+      border: 1px solid var(--checkbox-border-color);
+      min-width: var(--checkbox-size);
+      transition: border-color 1s;
+      height: var(--checkbox-size);
+      width: var(--checkbox-size);
+      align-self: flex-start;
+      margin-right: 22px;
+      display: block;
+      content: '';
+    }
+    &:after {
+      transition: var(--transition-time) ease-in;
+      border: 1px solid var(--primary-color);
+      transform-origin: 6px 20px;
+      border-left: transparent;
+      border-top: transparent;
+      transform: rotate(45deg);
+      position: absolute;
+      display: block;
+      content: '';
+      opacity: 0;
+      left: 1px;
+      top: 1px;
+    }
+    input[id]:checked ~ & {
+      &:before {
+        border-color: var(--primary-color);
+      }
+      &:after {
+        height: 14px;
+        width: 8px;
+        opacity: 1;
+      }
+    }
+  }
+}

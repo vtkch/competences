@@ -1,0 +1,67 @@
+@import './mixins';
+
+.ai-end {
+  align-items: flex-end;
+}
+
+.ai-start {
+  align-items: flex-start;
+}
+
+.ai-center {
+  align-items: center;
+}
+
+.ai-baseline {
+  align-items: baseline;
+}
+
+.ai-stretch {
+  align-items: stretch;
+}
+
+.jc-end {
+  justify-content: flex-end;
+}
+
+.jc-start {
+  justify-content: flex-start;
+}
+
+.jc-between {
+  justify-content: space-between;
+}
+
+.jc-around {
+  justify-content: space-around;
+}
+
+.jc-center {
+  justify-content: center;
+}
+
+.db {
+  display: block;
+}
+
+.df {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.p-rel {
+  position: relative;
+}
+
+.hide {
+  display: none;
+}
+
+.center {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}

@@ -1,0 +1,27 @@
+@import 'variables';
+@import './mixins';
+
+.#{$framework-prefix}-pg-list {
+  $size: 27px;
+  grid-template-columns: repeat(5, $size);
+  justify-content: center;
+  grid-gap: 12px;
+  display: grid;
+  button {
+    @include btn-by-default;
+    border: 1px solid var(--border-default-color);
+    background-color: var(--main-bg-color);
+    color: var(--border-default-color);
+    @include size($size);
+    border-radius: 50%;
+    &:hover {
+      color: var(--primary-color);
+      border-color: currentColor;
+    }
+  }
+  .active button {
+    background-color: var(--primary-color);
+    color: var(--main-bg-color);
+    border: none;
+  }
+}

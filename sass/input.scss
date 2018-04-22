@@ -1,0 +1,154 @@
+@import 'variables';
+@import './mixins';
+@import './helpers';
+
+.#{$framework-prefix}-control {
+  --transform: translateY(-10px) scale(.75, .75);
+  --transition-time: .2s;
+  --icon-size: 24px;
+  --shift: 10px;
+  &-area {
+    --inp-height: var(--area-control-height);
+  }
+  min-height: var(--inp-height);
+  position: relative;
+  cursor: pointer;
+  &-errors {
+    color: var(--main-danger-color);
+    text-indent: var(--inp-indent);
+    font-size: 13px;
+    margin-top: 5px;
+  }
+  &-label {
+    transform-origin: var(--inp-indent);
+    transition: var(--transition-time);
+    text-indent: var(--inp-indent);
+    color: var(--inp-label-color);
+    height: var(--inp-height);
+    width: calc(100% - 36px);
+    @include text-overflow;
+    align-items: center;
+    position: absolute;
+    user-select: none;
+    font-size: 17px;
+    display: flex;
+    top: 0;
+    &-icon {
+      top: calc(calc(var(--inp-height) - var(--icon-size)) / 2);
+      background-image: url(../assets/spriteinput.svg);
+      height: var(--icon-size);
+      width: var(--icon-size);
+      position: absolute;
+      right: 24px;
+
+      &-ok {
+       /* background-position: -13px 37px;*/
+        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <path fill="#75AF26" d="M28 26h-8v-2h8l-4-4 2-1 6 6-6 6-2-1z"/>
+</svg>');
+        &-blue {
+          background-position: -63px 37px;
+        }
+      }
+      &-blue-eye {
+        background-position: -63px 137px;
+        &-hidden {
+          background-position: -63px 87px;
+        }
+      }
+      &-green-eye {
+        background-position: -13px 137px;
+        &-hidden {
+          background-position: -13px 87px;
+        }
+      }
+      &-refresh {
+        background-position: -13px -363px;
+        &-blue {
+          background-position: -63px -363px;
+        }
+      }
+      &-search {
+        background-position: -13px -313px;
+        &-blue {
+          background-position: -63px -313px;
+        }
+        &-gray {
+          background-position: -113px -313px;
+        }
+      }
+      &-datepicker {
+        background-position: -13px 437px;
+        &-blue {
+          background-position: -63px 437px;
+        }
+      }
+      &-clear {
+        background-position: -13px 387px;
+      }
+      &-caret {
+        background-position: -13px 287px;
+      }
+      &-error {
+        background-position: -13px 337px;
+      }
+      &-arrow-next {
+        background-position: -13px 537px;
+        &-blue {
+          background-position: -63px 537px;
+        }
+        &-gray {
+          background-position: -113px 537px;
+        }
+      }
+      &-upload {
+        background-position: -13px 487px;
+        &-blue {
+          background-position: -63px 487px;
+        }
+      }
+    }
+    .#{$framework-prefix}-control-input:focus + & {
+      transform: var(--transform);
+    }
+  }
+  &-input {
+    padding-right: calc(var(--icon-size) + var(--inp-indent) + 12px);
+    border: var(--inp-border-width) solid var(--inp-border-color);
+    text-indent: calc(var(--inp-indent) - var(--inp-border-width));
+    transition: background-color var(--transition-time);
+    color: var(--main-black-color);
+    height: var(--inp-height);
+    @include text-overflow;
+    box-sizing: border-box;
+    font-size: 17px;
+    width: 100%;
+    /*&[type="file"]::-webkit-file-upload-button  {
+      -webkit-appearance: none;
+      all: unset;
+      width: 0;
+      padding: 10px 0 0 20px;
+    }*/
+    &:disabled {
+      background-color: var(--inp-dis-bg-color);
+    }
+    &:hover {
+      border-color: var(--inp-border-h-color);
+    }
+    &::placeholder {
+      color: transparent;
+    }
+
+    &:valid, &[value]:disabled {
+      padding-top: var(--shift);
+      & + .#{$framework-prefix}-control-label {
+        transform: var(--transform);
+      }
+    }
+    &:focus {
+      border-color: var(--inp-border-f-color);
+      padding-top: var(--shift);
+      outline: none
+    }
+  }
+}

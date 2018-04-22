@@ -1,0 +1,51 @@
+@import 'variables';
+
+.#{$framework-prefix}-radio {
+  &-group-container {
+    display: block;
+    & > [type="radio"] {
+      display: none;
+    }
+  }
+
+  &-label {
+    margin-bottom: 32px;
+    cursor: pointer;
+    display: block;
+    &:last-child {
+      margin-bottom: 0;
+    }
+    &:hover:before {
+      border-color: var(--radio-border-h-color);
+    }
+    input:checked + &:after {
+      background-color: var(--primary-color);
+    }
+    &:after {
+      transition: background-color var(--transition-time);
+      transform: translate(8px, -18px);
+      height: $radio-circle-size;
+      width: $radio-circle-size;
+      position: absolute;
+      border-radius: 50%;
+      display: block;
+      content: '';
+    }
+
+    input:checked + &:before {
+      border-color: var(--primary-color);
+    }
+
+    &:before {
+      transition: border-color var(--transition-time);
+      border: 1px solid var(--radio-border-color);
+      height: var(--radio-container-size);
+      width: var(--radio-container-size);
+      vertical-align: middle;
+      display: inline-block;
+      border-radius: 50%;
+      margin-right: 19px;
+      content: '';
+    }
+  }
+}

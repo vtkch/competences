@@ -1,0 +1,67 @@
+@import 'variables';
+@import './mixins';
+
+#show-all-table-cells {
+  display: none;
+  & + .#{$framework-prefix}-table {
+    tr:nth-child(n + #{$tb-shown-rows}) {
+      display: none;
+    }
+  }
+  &:checked + .#{$framework-prefix}-table {
+    tr:nth-child(n + #{$tb-shown-rows}) {
+      display: table-row;
+    }
+    .#{$framework-prefix}-table-caret {
+      transform: rotate(180deg) translate(3px, 3px);
+    }
+  }
+}
+
+.#{$framework-prefix}-table {
+  border: 1px solid var(--tb-border-color);
+  font-size: 15px;
+  th, td {
+    width: $max-column-width;
+    box-sizing: border-box;
+    padding: 1rem 1.5rem;
+  }
+  tr:nth-child(n + #{$tb-shown-rows + 1}) {
+    display: none;
+  }
+
+  td {
+    border: 1px solid var(--tb-border-color);
+    word-break: break-all;
+  }
+
+  th {
+    font-weight: bold;
+  }
+
+  thead, tfoot {
+    background-color: var(--tb-description-bg-color);
+    text-align: center;
+  }
+
+  &-caret {
+    transition: transform .5s;
+    @include caret {
+      transform: translate(-3px, 3px);
+    }
+  }
+
+  tfoot {
+    td {
+      padding: 0;
+      label {
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        min-height: 3rem;
+        cursor: pointer;
+        display: flex;
+      }
+    }
+  }
+}

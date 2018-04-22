@@ -1,0 +1,19 @@
+@import 'variables';
+@import './mixins';
+
+/// @group fonts
+/// @name .fs-+
+/// @example
+/// .fs-34 {
+///    font-size: 34px;
+/// }
+.fs {
+
+  $font-sizes: 56 45 34 24 20 17 15 13;
+
+  @each $fs in $font-sizes {
+    &-#{$fs} {
+      font-size: #{$fs}px;
+    }
+  }
+}

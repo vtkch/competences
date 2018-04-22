@@ -1,0 +1,62 @@
+@import 'config';
+
+:root {
+  // input
+  --area-control-height: $area-control-height;
+  --inp-dis-bg-color: $input-disabled-background-color;
+  --inp-border-f-color: $input-border-focus-color;
+  --inp-border-h-color: $input-border-hover-color;
+  --inp-border-width: $input-border-width;
+  --inp-border-color: $input-border-color;
+  --inp-label-color: $input-label-color;
+  --inp-indent: $input-indent;
+  --inp-height: $input-height;
+  //buttons
+  --btn-bg-color: $btn-bg-color;
+  --btn-height: $btn-height;
+  // rounded buttons, extend from buttons
+  --btn-rounded-bg-dis-color: $btn-bg-disabled-color;
+  --btn-rounded-bg-color: $btn-rounded-bg-color;
+  --btn-rounded-bg-h-color: $btn-rounded-bg-h-color;
+  --btn-rounded-font-h-color: $btn-rounded-font-h-color;
+  --btn-rounded-height: $btn-rounded-height;
+
+  //table
+  --tb-description-bg-color: $tb-description-bg-color;
+  --tb-border-color: $tb-border-color;
+
+  //radio
+  --radio-border-h-color: $radio-border-h-color;
+  --radio-border-color: $radio-border-color;
+  --radio-container-size: $radio-container-size;
+  --radio-circle-size: $radio-circle-size;
+
+  --tab-label-color: $gray-universal-color;
+  // checkbox
+  --checkbox-border-h-color: $checkbox-border-h-color;
+  --checkbox-border-color: $checkbox-border-color;
+  --checkbox-container-height: $input-height;
+  --checkbox-size: $checkbox-size;
+
+  // TODO refactor only buttons, inputs, radio, tables, checkboses, rounded buttons variables
+
+  // next steps is ...
+  // starting refactor, recompile etc
+
+  --business-secondary-color: $business-secondary-color;
+  --slider-btn-normal-color: $slider-btn-normal-color;
+  --business-primary-color: $business-primary-color;
+  --main-danger-color: $main-danger-color;
+  --main-black-color: $main-black-color;
+  --secondary-color: $secondary-color;
+  --main-grey-color: $main-grey-color;
+  --transition-time: $transition-time;
+  --disabled-color: $disabled-color;
+  --primary-color: $primary-color;
+  --grey-bg-color: $grey-bg-color;
+  --main-bg-color: $main-bg-color;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: 'Noto Sans';
+}
